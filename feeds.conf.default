@@ -7,7 +7,7 @@ src-git-full telephony https://git.openwrt.org/feed/telephony.git;openwrt-21.02
 src-git-full handsomefeed https://github.com/HandsomeMod/handsomefeed.git
 
 # Lean Feeds
-src-git-full extra https://github.com/immortalwrt/extra.git
+src-git-full extra https://github.com/HandsomeMod/extra.git
 
 # Istore
 src-git istore https://github.com/linkease/istore.git;main

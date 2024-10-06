@@ -1,0 +1,40 @@
+From 2e11468b1a279d9bcbf8ad6072e10bac8a628328 Mon Sep 17 00:00:00 2001
+From: Seey6 <91660416+Seey6@users.noreply.github.com>
+Date: Sat, 5 Oct 2024 22:04:56 +0800
+Subject: [PATCH] DTS: Add sim select for SP970V13
+
+---
+ .../dts/qcom/msm8916-handsome-openstick-sp970.dts   | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/boot/dts/qcom/msm8916-handsome-openstick-sp970.dts b/arch/arm64/boot/dts/qcom/msm8916-handsome-openstick-sp970.dts
+index 724d5edefe0c2a..f6ad3969cf97de 100644
+--- a/arch/arm64/boot/dts/qcom/msm8916-handsome-openstick-sp970.dts
++++ b/arch/arm64/boot/dts/qcom/msm8916-handsome-openstick-sp970.dts
+@@ -54,6 +54,17 @@
+ 			default-state = "on";
+ 		};
+ 
++		sim-en {
++			label = "sim-en";
++			gpios = <&msmgpio 120 GPIO_ACTIVE_HIGH>;
++			default-state = "on";
++		};
++
++		sim-sel {
++			label = "sim-sel";
++			gpios = <&msmgpio 114 GPIO_ACTIVE_HIGH>;
++			default-state = "off";
++		};
+ 	};
+ };
+ 
+@@ -67,7 +78,7 @@
+ 
+ &msmgpio {
+ 	msmgpio_leds: msmgpio-leds {
+-		pins = "gpio28","gpio10","gpio9";
++		pins = "gpio28","gpio10","gpio9","gpio120","gpio114";
+ 		function = "gpio";
+ 
+ 		bias-disabled;
